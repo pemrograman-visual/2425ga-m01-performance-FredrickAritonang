@@ -2,23 +2,20 @@
 <flowgorithm fileversion="4.2">
     <attributes>
         <attribute name="name" value="M01"/>
-        <attribute name="authors" value="Pair 13"/>
+        <attribute name="authors" value="Frank Niroy"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-18 10:57:19 AM"/>
+        <attribute name="saved" value="2024-10-18 11:35:04 AM"/>
         <attribute name="created" value="RnJhbmsgTmlyb3k7RlJBTks7MjAyMy0xMC0xNjswMS4wOC4zMiBQTTsyNjc4"/>
         <attribute name="edited" value="RnJhbmsgTmlyb3k7RlJBTks7MjAyMy0xMC0xNjswNC4zNC41MiBQTTszNjsyODQ2"/>
-        <attribute name="edited" value="VVNFUjtMQVBUT1AtQjc2M09HUTY7MjAyNC0xMC0xODsxMDo1NzoxOSBBTTsxMjsyNzY3"/>
+        <attribute name="edited" value="VVNFUjtMQVBUT1AtQjc2M09HUTY7MjAyNC0xMC0xODsxMTozNTowNCBBTTsxOzI3MDg="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="performa" type="Real" array="False" size=""/>
-            <declare name="nilai" type="Real" array="False" size=""/>
-            <declare name="A, AB, B, BC, C, D, E" type="Real" array="False" size=""/>
-            <declare name="kreditangka" type="Real" array="False" size=""/>
-            <declare name="nilaihuruf" type="String" array="False" size=""/>
-            <declare name="kredit" type="String" array="False" size=""/>
-            <assign variable="kreditangka" expression="0"/>
+            <declare name="performa, nilai, A, AB, B, BC, C, D, E" type="Real" array="False" size=""/>
+            <declare name="kredit1" type="Real" array="False" size=""/>
+            <declare name="nilai1, kredit" type="String" array="False" size=""/>
+            <assign variable="kredit1" expression="0"/>
             <assign variable="A" expression="4.0"/>
             <assign variable="AB" expression="3.5"/>
             <assign variable="B" expression="3.0"/>
@@ -32,42 +29,42 @@
                     <assign variable="kredit" expression="kredit"/>
                 </then>
                 <else>
-                    <assign variable="kreditangka" expression="toReal(kredit)"/>
+                    <assign variable="kredit1" expression="toReal(kredit)"/>
                 </else>
             </if>
-            <input variable="nilaihuruf"/>
-            <while expression="nilaihuruf != &quot;---&quot;">
-                <if expression="nilaihuruf = &quot;A&quot;">
+            <input variable="nilai1"/>
+            <while expression="nilai1 != &quot;---&quot;">
+                <if expression="nilai1 = &quot;A&quot;">
                     <then>
                         <assign variable="nilai" expression="4.0"/>
                     </then>
                     <else>
-                        <if expression="nilaihuruf = &quot;AB&quot;">
+                        <if expression="nilai1 = &quot;AB&quot;">
                             <then>
                                 <assign variable="nilai" expression="3.5"/>
                             </then>
                             <else>
-                                <if expression="nilaihuruf = &quot;B&quot;">
+                                <if expression="nilai1 = &quot;B&quot;">
                                     <then>
                                         <assign variable="nilai" expression="3.0"/>
                                     </then>
                                     <else>
-                                        <if expression="nilaihuruf = &quot;BC&quot;">
+                                        <if expression="nilai1 = &quot;BC&quot;">
                                             <then>
                                                 <assign variable="nilai" expression="2.5"/>
                                             </then>
                                             <else>
-                                                <if expression="nilaihuruf = &quot;C&quot;">
+                                                <if expression="nilai1 = &quot;C&quot;">
                                                     <then>
                                                         <assign variable="nilai" expression="2.0"/>
                                                     </then>
                                                     <else>
-                                                        <if expression="nilaihuruf = &quot;D&quot;">
+                                                        <if expression="nilai1 = &quot;D&quot;">
                                                             <then>
                                                                 <assign variable="nilai" expression="1.0"/>
                                                             </then>
                                                             <else>
-                                                                <if expression="nilaihuruf = &quot;E&quot;">
+                                                                <if expression="nilai1 = &quot;E&quot;">
                                                                     <then>
                                                                         <assign variable="nilai" expression="0.0"/>
                                                                     </then>
@@ -87,7 +84,7 @@
                         </if>
                     </else>
                 </if>
-                <assign variable="performa" expression="(kreditangka * nilai)"/>
+                <assign variable="performa" expression="(kredit1 * nilai)"/>
                 <output expression="toFixed(performa,1)" newline="True"/>
                 <input variable="kredit"/>
                 <if expression="kredit = &quot;---&quot;">
@@ -95,10 +92,10 @@
                         <assign variable="kredit" expression="kredit"/>
                     </then>
                     <else>
-                        <assign variable="kreditangka" expression="toReal(kredit)"/>
+                        <assign variable="kredit1" expression="toReal(kredit)"/>
                     </else>
                 </if>
-                <input variable="nilaihuruf"/>
+                <input variable="nilai1"/>
             </while>
         </body>
     </function>
